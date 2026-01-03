@@ -16,7 +16,7 @@ Never forget a tool again. Save any webpage to your personal Google Sheet with o
 | Shortcut | Action |
 |----------|--------|
 | `Alt+S` | Quick save (instant, no popup) |
-| `Alt+U` | Open Use Later popup |
+| `Alt+U` | Open Future Tools popup |
 | `Ctrl/Cmd+Enter` | Save (when popup is open) |
 | `Escape` | Close popup |
 
@@ -27,7 +27,7 @@ Never forget a tool again. Save any webpage to your personal Google Sheet with o
 - Or load unpacked from `chrome://extensions/`
 
 ### 2. Set Up Your Sheet
-1. Click the Use Later icon
+1. Click the Future Tools icon
 2. Click "Set Up Now" → You'll be taken to Settings
 3. Click "Copy the Form Template" to create your own form
 4. Link the form to Google Sheets (Form → Responses → Link to Sheets)
@@ -73,7 +73,7 @@ See [PRIVACY_POLICY.md](PRIVACY_POLICY.md) for full details.
 
 ```bash
 # Create ZIP for Chrome Web Store
-zip -r use-later-v1.0.0.zip . -x "store-assets/*" -x "*.md" -x ".DS_Store" -x "*.zip"
+zip -r future-tools-v1.0.0.zip . -x "store-assets/*" -x "*.md" -x ".DS_Store" -x "*.zip"
 ```
 
 ## Credits

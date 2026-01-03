@@ -1,4 +1,4 @@
-# Chrome Web Store Listing - Use Later
+# Chrome Web Store Listing - Future Tools
 
 ## Extension Name
 Future Tools - Save to Google Sheets
@@ -8,9 +8,9 @@ Never forget a tool again. Save any webpage to your Google Sheet instantly. One 
 
 ## Detailed Description
 
-🚀 **Use Later - The Simplest Way to Save Pages for Later**
+🚀 **Future Tools - The Simplest Way to Save Pages for Later**
 
-Stop losing track of interesting articles, resources, and pages. Use Later lets you save any webpage to your personal Google Sheet with just one click!
+Stop losing track of interesting articles, resources, and pages. Future Tools lets you save any webpage to your personal Google Sheet with just one click!
 
 **✨ How It Works**
 1. Create your own copy of our Google Form template (one-time setup)
@@ -45,7 +45,7 @@ Stop losing track of interesting articles, resources, and pages. Use Later lets 
 • We never see your browsing or saved pages
 
 **📋 Quick Setup (2 minutes)**
-1. Install Use Later
+1. Install Future Tools
 2. Click the icon → Set Up Now
 3. Copy our form template to your Google account
 4. Paste your new form URL
@@ -83,5 +83,5 @@ English
 
 ```bash
 cd "/Users/aniruddhgupta/Chrome Extension - forget name"
-zip -r use-later-v1.0.0.zip . -x "store-assets/*" -x "*.md" -x ".DS_Store" -x "*.zip"
+zip -r future-tools-v1.0.0.zip . -x "store-assets/*" -x "*.md" -x ".DS_Store" -x "*.zip"
 ```

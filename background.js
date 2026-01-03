@@ -1,4 +1,4 @@
-// Background Service Worker for Use Later
+// Background Service Worker for Future Tools
 // Handles keyboard shortcuts and background form submission
 
 // Fixed field IDs from the template form
@@ -66,7 +66,7 @@ async function quickSave() {
             showBadge('→', '#3B82F6');
         }
     } catch (error) {
-        console.error('Use Later error:', error);
+        console.error('Future Tools error:', error);
         showBadge('!', '#EF4444');
     }
 }
