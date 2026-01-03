@@ -47,7 +47,6 @@ The extension submits data to Google Forms, governed by [Google's Privacy Policy
 |------------|----------------|
 | `activeTab` | To get the current page's URL and title when you click save |
 | `storage` | To remember your Form URL locally |
-| `host_permissions` (docs.google.com) | To submit forms in the background |
 
 ## Your Control
 
