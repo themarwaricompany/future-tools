@@ -1,10 +1,10 @@
 # Chrome Web Store Listing - Use Later
 
 ## Extension Name
-Use Later - Save to Google Sheets
+Future Tools - Save to Google Sheets
 
 ## Short Description (132 characters max)
-Save any webpage to your Google Sheet instantly. One click to build your reading list, research collection, or bookmark library.
+Never forget a tool again. Save any webpage to your Google Sheet instantly. One click to build your reading list or research.
 
 ## Detailed Description
 

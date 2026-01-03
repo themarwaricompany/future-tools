@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Use Later - Save to Google Sheets",
+    "name": "Future Tools - Save to Google Sheets",
     "version": "1.0.0",
-    "description": "Save any webpage to your Google Sheet with one click. Perfect for bookmarking and building your reading list.",
+    "description": "Never forget a tool again. Save any webpage to your Google Sheet with one click.",
     "permissions": [
         "activeTab",
         "storage"

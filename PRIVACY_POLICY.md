@@ -1,10 +1,10 @@
-# Privacy Policy for Use Later
+# Privacy Policy for Future Tools
 
-**Last Updated:** January 3, 2026
+**Last Updated:** January 4, 2026
 
 ## Overview
 
-Use Later ("the Extension") is a browser extension that helps you save webpage URLs and titles to your personal Google Sheet. We are committed to protecting your privacy and being transparent about our data practices.
+Future Tools ("the Extension") is a browser extension that helps you save webpage URLs and titles to your personal Google Sheet. We are committed to protecting your privacy and being transparent about our data practices.
 
 ## Data Collection
 

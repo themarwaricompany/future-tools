@@ -1,6 +1,6 @@
-# Use Later - Save to Google Sheets
+# Future Tools - Save to Google Sheets
 
-Save any webpage to your personal Google Sheet with one click. Build your reading list, research collection, or bookmark library - all in a spreadsheet you control.
+Never forget a tool again. Save any webpage to your personal Google Sheet with one click. Build your reading list, research collection, or bookmark library - all in a spreadsheet you control.
 
 ## Features
 
