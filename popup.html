@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Later</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z"
+            stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M17 21V13H7V21" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M7 3V8H15" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="logo-text">Use Later</span>
+      </div>
+    </header>
+
+    <!-- Setup View -->
+    <div id="setupView" class="view hidden">
+      <div class="setup-content">
+        <div class="setup-icon">📋</div>
+        <h2>Get Started</h2>
+        <p>Connect your Google Sheet to save pages.</p>
+        <button class="btn btn-primary" id="setupBtn">Set Up (2 min)</button>
+      </div>
+    </div>
+
+    <!-- Main View -->
+    <div id="mainView" class="view hidden">
+      <!-- Page Info -->
+      <div class="page-card">
+        <div class="page-favicon" id="pageFavicon">🌐</div>
+        <div class="page-info">
+          <div class="page-title" id="pageTitle">Loading...</div>
+          <div class="page-url" id="pageUrl">Loading...</div>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="notes-section">
+        <textarea id="notesInput" class="notes-input" placeholder="Add a note (optional)..." rows="2"></textarea>
+      </div>
+
+      <!-- Save Button -->
+      <button class="btn btn-save" id="saveBtn">
+        <span class="save-text">Save for Later</span>
+        <div class="spinner hidden"></div>
+      </button>
+
+      <!-- Shortcut Hint -->
+      <div class="shortcut-hint">
+        <span>Quick save: <kbd>Ctrl+S</kbd> (Mac) or <kbd>Alt+S</kbd> (Windows)</span>
+      </div>
+    </div>
+
+    <!-- Success View -->
+    <div id="successView" class="view hidden">
+      <div class="success-content">
+        <div class="success-icon">✅</div>
+        <h2>Saved!</h2>
+        <p>Page added to your sheet.</p>
+        <div class="success-actions">
+          <button class="btn btn-secondary" id="saveAnotherBtn">Save Another</button>
+          <button class="btn btn-text" id="viewSheetBtn">View Sheet →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error View -->
+    <div id="errorView" class="view hidden">
+      <div class="error-content">
+        <div class="error-icon">⚠️</div>
+        <h2>Couldn't Save</h2>
+        <p id="errorMessage">Make sure your form is published and accepting responses.</p>
+        <div class="error-actions">
+          <button class="btn btn-secondary" id="retryBtn">Try Again</button>
+          <button class="btn btn-text" id="openSettingsBtn">Settings</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footerSection">
+      <a href="#" id="viewSheetLink">View my saved pages</a>
+      <span class="divider">•</span>
+      <a href="#" id="settingsLink">Settings</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Later - Setup</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Use Later</h1>
+            <p class="subtitle">Save webpages to your Google Sheet</p>
+        </header>
+
+        <!-- Step 1 -->
+        <section class="card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h2>Create your Google Sheet</h2>
+                <p>Click below to copy our form template. This creates a form that saves to YOUR Google Sheet.</p>
+
+                <a href="https://docs.google.com/forms/d/1NePmYAZ8_3fFVYrKQcFrKXv55L_jG1zi_JErMmQG8po/copy"
+                    target="_blank" class="btn btn-primary">
+                    Copy Form Template →
+                </a>
+
+                <div class="note">
+                    <strong>After copying:</strong> Open your form → Click "Responses" tab → Click "Link to Sheets"
+                    → This creates your Google Sheet
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h2>Paste your form URL</h2>
+                <p>Copy the URL from your browser's address bar when viewing your new form.</p>
+
+                <div class="input-group">
+                    <label>Google Form URL <span class="required">*</span></label>
+                    <div class="input-row">
+                        <input type="url" id="formUrl" placeholder="https://docs.google.com/forms/d/..." />
+                        <button class="btn-paste" id="pasteBtn" title="Paste">📋</button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Google Sheet URL <span class="optional">(optional)</span></label>
+                    <input type="url" id="sheetUrl" placeholder="https://docs.google.com/spreadsheets/d/..." />
+                    <span class="hint">Add this to quickly view your saved pages from the extension</span>
+                </div>
+
+                <div class="input-group">
+                    <label>Name <span class="optional">(optional)</span></label>
+                    <input type="text" id="sheetName" placeholder="My Reading List" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Note -->
+        <section class="warning">
+            <strong>⚠️ Important:</strong> Make sure your form is accepting responses.
+            Open your form → Settings (gear icon) → Ensure "Responses" is turned ON.
+        </section>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button class="btn btn-secondary" id="resetBtn">Reset</button>
+            <button class="btn btn-primary" id="saveBtn">Save Settings</button>
+        </div>
+
+        <!-- Status -->
+        <div class="status hidden" id="statusMessage">
+            <span id="statusText"></span>
+        </div>
+
+        <!-- Shortcuts Info -->
+        <section class="info">
+            <h3>Keyboard Shortcuts</h3>
+            <div class="shortcuts">
+                <div class="shortcut">
+                    <kbd>Ctrl+S</kbd> <span class="os">(Mac)</span>
+                    <span>Quick save without popup</span>
+                </div>
+                <div class="shortcut">
+                    <kbd>Alt+S</kbd> <span class="os">(Windows)</span>
+                    <span>Quick save without popup</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Version 1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

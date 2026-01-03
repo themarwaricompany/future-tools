@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "Use Later - Save to Google Sheets",
+    "version": "1.0.0",
+    "description": "Save any webpage to your Google Sheet with one click. Perfect for bookmarking and building your reading list.",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "save-current-page": {
+            "suggested_key": {
+                "default": "Alt+S",
+                "mac": "MacCtrl+S"
+            },
+            "description": "Save current page"
+        },
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Alt+U",
+                "mac": "MacCtrl+U"
+            },
+            "description": "Open popup"
+        }
+    },
+    "options_page": "options.html",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+}
