@@ -301,11 +301,12 @@ Future Tools allows users to save any webpage (URL and title) to their personal 
 
 ## 5.1 Privacy Policy URL
 
-**Option A - Host the HTML file:**
-Upload the file at `/Users/aniruddhgupta/Chrome Extension - forget name/docs/privacy-policy.html` to your website and use that URL.
+✅ **LIVE URL (Use this in Chrome Web Store):**
+```
+https://themarwaricompany.github.io/future-tools/privacy-policy.html
+```
 
-**Option B - Use GitHub Pages:**
-Host on GitHub and use URL like: `https://yourusername.github.io/future-tools/privacy-policy.html`
+**Status:** Hosted and publicly accessible via GitHub Pages from the `/docs` folder.
 
 ## 5.2 Privacy Policy Summary
 
@@ -414,7 +415,7 @@ Upload files from `/Users/aniruddhgupta/Chrome Extension - forget name/store-ass
    - Check: "Website content" (we access page URL and title)
    - Usage: "Transferring to a service operated by the user" (Google Forms owned by user)
 
-4. **Privacy Policy URL:** [Enter the URL where you host privacy-policy.html]
+4. **Privacy Policy URL:** `https://themarwaricompany.github.io/future-tools/privacy-policy.html`
 
 5. **Remote Code:** Select "No"
 
