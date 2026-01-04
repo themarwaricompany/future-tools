@@ -9,15 +9,18 @@
         content="Privacy Policy for Future Tools Chrome Extension - Save webpages to Google Sheets">
     <style>
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --text-primary: #f1f5f9;
-            --text-secondary: #94a3b8;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --border: #334155;
-            --success: #22c55e;
-            --warning: #f59e0b;
+            --bg-primary: #0A0A0F;
+            --bg-secondary: #14141A;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --text-primary: #FFFFFF;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.45);
+            --accent: #3B82F6;
+            --accent-light: #60A5FA;
+            --success: #22C55E;
+            --error: #EF4444;
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 10px;
         }
 
         * {
@@ -120,17 +123,17 @@
         }
 
         .card {
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: var(--radius);
             padding: 24px;
             margin: 24px 0;
         }
 
         .data-flow {
-            background: linear-gradient(135deg, var(--bg-secondary), #1a2744);
+            background: var(--bg-secondary);
             border: 1px solid var(--accent);
-            border-radius: 12px;
+            border-radius: var(--radius);
             padding: 24px;
             text-align: center;
             margin: 24px 0;
