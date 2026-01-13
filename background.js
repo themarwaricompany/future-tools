@@ -230,7 +230,6 @@ function showBadge(text, color) {
 // Listen for installation
 chrome.runtime.onInstalled.addListener((details) => {
     if (details.reason === 'install') {
-        // Open the website setup page instead of local options
-        chrome.tabs.create({ url: 'https://www.findmyicp.com/sheets/start' });
+        chrome.runtime.openOptionsPage();
     }
 });
