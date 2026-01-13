@@ -1,10 +1,11 @@
-// Background Service Worker for Future Tools
+// Background Service Worker for Save to Sheets
 // Handles keyboard shortcuts and background form submission
 
 // Fixed field IDs from the template form
 const FIELD_IDS = {
     title: 'entry.2062101966',
     url: 'entry.2017374153',
+    tags: 'entry.238451584',  // ← CORRECTED from pre-filled URL
     notes: 'entry.1498665301'
 };
 
@@ -12,6 +13,10 @@ const FIELD_IDS = {
 chrome.commands.onCommand.addListener(async (command) => {
     if (command === 'save-current-page') {
         await quickSave();
+    } else if (command === 'save-with-tags') {
+        await openPopupWithTags();
+    } else if (command === 'open-sheet') {
+        await openGoogleSheet();
     }
 });
 
@@ -66,8 +71,45 @@ async function quickSave() {
             showBadge('→', '#3B82F6');
         }
     } catch (error) {
-        console.error('Future Tools error:', error);
+        console.error('Save to Sheets error:', error);
         showBadge('!', '#EF4444');
+    }
+}
+
+// Open popup with tags mode (Ctrl+Shift+S)
+async function openPopupWithTags() {
+    try {
+        // Set flag BEFORE opening popup
+        await chrome.storage.local.set({ openWithTags: true });
+
+        // Small delay to ensure storage is set
+        await new Promise(resolve => setTimeout(resolve, 50));
+
+        // Open popup
+        await chrome.action.openPopup();
+    } catch (error) {
+        console.error('Error opening popup:', error);
+        // If popup fails to open programmatically, try fallback
+        try {
+            await chrome.storage.local.set({ openWithTags: true });
+        } catch (e) {
+            console.error('Storage error:', e);
+        }
+    }
+}
+
+// Open Google Sheet (Ctrl+Shift+O)
+async function openGoogleSheet() {
+    try {
+        const config = await chrome.storage.sync.get(['sheetUrl']);
+        if (config.sheetUrl) {
+            await chrome.tabs.create({ url: config.sheetUrl });
+        } else {
+            // If no sheet URL, open settings
+            chrome.runtime.openOptionsPage();
+        }
+    } catch (error) {
+        console.error('Error opening sheet:', error);
     }
 }
 
@@ -117,6 +159,14 @@ async function savePageToForm(data) {
         const formData = new URLSearchParams();
         formData.append(FIELD_IDS.title, data.title);
         formData.append(FIELD_IDS.url, data.url);
+
+        // Add tags if provided (for checkbox field, append each tag)
+        if (data.tags && Array.isArray(data.tags)) {
+            data.tags.forEach(tag => {
+                formData.append(FIELD_IDS.tags, tag);
+            });
+        }
+
         if (data.notes) {
             formData.append(FIELD_IDS.notes, data.notes);
         }
@@ -180,6 +230,7 @@ function showBadge(text, color) {
 // Listen for installation
 chrome.runtime.onInstalled.addListener((details) => {
     if (details.reason === 'install') {
-        chrome.runtime.openOptionsPage();
+        // Open the website setup page instead of local options
+        chrome.tabs.create({ url: 'https://www.findmyicp.com/sheets/start' });
     }
 });
