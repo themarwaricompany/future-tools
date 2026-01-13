@@ -50,6 +50,12 @@ body {
   gap: 8px;
 }
 
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
 .logo-text {
   font-size: 16px;
   font-weight: 600;
@@ -65,6 +71,53 @@ body {
 
 .view.hidden {
   display: none !important;
+}
+
+/* Field Groups */
+.field-group {
+  margin-bottom: 10px;
+}
+
+.field-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.field-value {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.url-value {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.field-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 /* Setup View */
@@ -93,6 +146,36 @@ body {
   font-size: 13px;
   color: var(--text-secondary);
   margin-bottom: 16px;
+}
+
+.setup-content .hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* Loading View */
+.loading-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.loading-content .spinner {
+  position: static;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.loading-content p {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 /* Page Card */
@@ -148,8 +231,16 @@ body {
 }
 
 /* Notes */
-.notes-section {
+.notes-container {
   margin-bottom: 12px;
+}
+
+.section-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
 }
 
 .notes-input {
@@ -171,6 +262,68 @@ body {
 .notes-input:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+/* Tags */
+.tags-container {
+  margin-bottom: 14px;
+}
+
+.tags-container.hidden {
+  display: none;
+}
+
+.tags-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.tag-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.tag-checkbox:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.tag-checkbox.selected {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.tag-checkbox.focused {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.tag-checkbox input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.tag-checkbox .tag-label {
+  font-size: 12px;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.tags-hint {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
 }
 
 /* Buttons */

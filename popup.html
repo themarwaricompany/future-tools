@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Future Tools</title>
+  <title>Save to Sheets in 1-Click</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 
@@ -13,45 +13,57 @@
     <!-- Header -->
     <header class="header">
       <div class="logo">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z"
-            stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M17 21V13H7V21" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M7 3V8H15" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="logo-text">Future Tools</span>
+        <img src="icons/icon48.png" alt="Save to Sheets" class="logo-icon">
+        <span class="logo-text">Save to Sheets</span>
       </div>
     </header>
 
-    <!-- Setup View -->
+    <!-- Setup View (No form URL configured) -->
     <div id="setupView" class="view hidden">
       <div class="setup-content">
         <div class="setup-icon">📋</div>
         <h2>Get Started</h2>
-        <p>Connect your Google Sheet to save pages.</p>
+        <p>Set up your Google Form to save pages.</p>
         <button class="btn btn-primary" id="setupBtn">Set Up (2 min)</button>
+        <p class="hint">Need help? <a href="https://www.findmyicp.com/sheets" target="_blank">View guide</a>
+        </p>
       </div>
     </div>
 
     <!-- Main View -->
     <div id="mainView" class="view hidden">
-      <!-- Page Info -->
-      <div class="page-card">
-        <div class="page-favicon" id="pageFavicon">🌐</div>
-        <div class="page-info">
-          <div class="page-title" id="pageTitle">Loading...</div>
-          <div class="page-url" id="pageUrl">Loading...</div>
+      <!-- URL Field (Read-only with display) -->
+      <div class="field-group">
+        <label class="section-label">URL:</label>
+        <div class="field-display">
+          <div class="page-favicon" id="pageFavicon">🌐</div>
+          <div class="field-value url-value" id="pageUrl" title="">Loading...</div>
+        </div>
+      </div>
+
+      <!-- Title Field (Editable) -->
+      <div class="field-group">
+        <label for="titleInput" class="section-label">Title:</label>
+        <input type="text" id="titleInput" class="field-input" placeholder="Page title...">
+      </div>
+
+      <!-- Tags Section (Always visible) -->
+      <div class="tags-container" id="tagsContainer">
+        <label class="section-label">Tags (optional - select up to 4):</label>
+        <div class="tags-grid" id="tagsGrid">
+          <!-- Tags will be inserted here by JS -->
         </div>
       </div>
 
       <!-- Notes -->
-      <div class="notes-section">
+      <div class="notes-container">
+        <label for="notesInput" class="section-label">Notes (optional):</label>
         <textarea id="notesInput" class="notes-input" placeholder="Add a note (optional)..." rows="2"></textarea>
       </div>
 
       <!-- Save Button -->
       <button class="btn btn-save" id="saveBtn">
-        <span class="save-text">Save for Later</span>
+        <span class="save-text">Save to Sheet</span>
         <div class="spinner hidden"></div>
       </button>
 
@@ -79,17 +91,17 @@
       <div class="error-content">
         <div class="error-icon">⚠️</div>
         <h2>Couldn't Save</h2>
-        <p id="errorMessage">Make sure your form is published and accepting responses.</p>
+        <p id="errorMessage">Something went wrong. Please try again.</p>
         <div class="error-actions">
           <button class="btn btn-secondary" id="retryBtn">Try Again</button>
-          <button class="btn btn-text" id="openSettingsBtn">Settings</button>
+          <button class="btn btn-text" id="helpBtn">Get Help</button>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer" id="footerSection">
-      <a href="#" id="viewSheetLink">View my saved pages</a>
+      <a href="#" id="viewSheetLink">View saved pages</a>
       <span class="divider">•</span>
       <a href="#" id="settingsLink">Settings</a>
     </footer>

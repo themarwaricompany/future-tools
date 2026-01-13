@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Future Tools - Setup</title>
+    <title>Save to Sheets - Settings</title>
     <link rel="stylesheet" href="options.css">
 </head>
 
@@ -12,35 +12,40 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>Future Tools</h1>
-            <p class="subtitle">Never forget a tool again</p>
+            <h1>Save to Sheets in 1-Click</h1>
+            <p class="subtitle">by FindMyICP</p>
         </header>
 
-        <!-- Step 1 -->
+        <!-- Setup Instructions -->
         <section class="card">
             <div class="step-number">1</div>
             <div class="step-content">
-                <h2>Create your Google Sheet</h2>
-                <p>Click below to copy our form template. This creates a form that saves to YOUR Google Sheet.</p>
+                <h2>Copy Form & Get Published URL</h2>
+                <p>Click below to copy our form template to your Google Drive.</p>
 
-                <a href="https://docs.google.com/forms/d/1NePmYAZ8_3fFVYrKQcFrKXv55L_jG1zi_JErMmQG8po/copy"
-                    target="_blank" class="btn btn-primary">
+                <a href="https://docs.google.com/forms/d/1jO3K8LPuZq3J8C4mGUrV_sesX8_x8rwr--Ke7LDFKTQ/copy"
+                    target="_blank" class="btn btn-secondary">
                     Copy Form Template →
                 </a>
 
                 <div class="note">
-                    <strong>After copying:</strong> Open your form → Click "Responses" tab → Click "Link to Sheets"
-                    → This creates your Google Sheet
+                    <strong>After copying the form:</strong><br>
+                    1. Your copied form will open<br>
+                    2. Click the <strong>"Publish"</strong> button (top section of the form)<br>
+                    3. A dialog will appear with your form URL<br>
+                    4. <strong>Copy this URL</strong> - you'll paste it in Step 2 below<br>
+                    <br>
+                    <strong>⚠️ Important:</strong> You MUST publish and copy this URL before proceeding to Step 2!
                 </div>
             </div>
         </section>
 
-        <!-- Step 2 -->
+        <!-- Manual Setup - Step 2 -->
         <section class="card">
             <div class="step-number">2</div>
             <div class="step-content">
-                <h2>Paste your form URL</h2>
-                <p>Copy the URL from your browser's address bar when viewing your new form.</p>
+                <h2>Paste Form URL & Create Google Sheet</h2>
+                <p>First, paste the published form URL from Step 1. Then create your Google Sheet.</p>
 
                 <div class="input-group">
                     <label>Google Form URL <span class="required">*</span></label>
@@ -48,28 +53,73 @@
                         <input type="url" id="formUrl" placeholder="https://docs.google.com/forms/d/..." />
                         <button class="btn-paste" id="pasteBtn" title="Paste">📋</button>
                     </div>
+                    <span class="hint">Paste the URL you copied from the Publish dialog in Step 1</span>
+                </div>
+
+                <div class="note">
+                    <strong>Now create your Google Sheet:</strong><br>
+                    1. Go back to your form (open it in a new tab if needed)<br>
+                    2. Click the <strong>"Responses"</strong> tab<br>
+                    3. Click the green button: <strong>"Create New Google Sheet"</strong><br>
+                    4. A new Google Sheet will open<br>
+                    5. <strong>Copy the URL</strong> from the address bar of the sheet<br>
+                    6. Paste it below
                 </div>
 
                 <div class="input-group">
-                    <label>Google Sheet URL <span class="optional">(optional)</span></label>
+                    <label>Google Sheet URL <span class="required">*</span></label>
                     <input type="url" id="sheetUrl" placeholder="https://docs.google.com/spreadsheets/d/..." />
-                    <span class="hint">Add this to quickly view your saved pages from the extension</span>
-                </div>
-
-                <div class="input-group">
-                    <label>Name <span class="optional">(optional)</span></label>
-                    <input type="text" id="sheetName" placeholder="My Reading List" />
+                    <span class="hint">Paste the URL from your Google Sheet's address bar</span>
                 </div>
             </div>
         </section>
 
-        <!-- Important Note -->
-        <section class="warning">
-            <strong>⚠️ Important:</strong> Make sure your form is accepting responses.
-            Open your form → Settings (gear icon) → Ensure "Responses" is turned ON.
+        <!-- Manage Tags Section -->
+        <section class="card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h2>Manage Tags (Optional)</h2>
+                <p>Enable or disable tags for organizing your saved pages. Select up to 4 tags when saving.</p>
+
+                <div class="tags-section">
+                    <label><strong>Available Tags:</strong></label>
+                    <div class="tags-list" id="tagsList">
+                        <label class="tag-item">
+                            <input type="checkbox" value="Read Later" checked>
+                            <span>⏰ Read Later</span>
+                        </label>
+                        <label class="tag-item">
+                            <input type="checkbox" value="Tool" checked>
+                            <span>🛠️ Tool</span>
+                        </label>
+                        <label class="tag-item">
+                            <input type="checkbox" value="Video" checked>
+                            <span>📺 Video</span>
+                        </label>
+                        <label class="tag-item">
+                            <input type="checkbox" value="Article" checked>
+                            <span>📄 Article</span>
+                        </label>
+                        <label class="tag-item">
+                            <input type="checkbox" value="Important" checked>
+                            <span>⭐ Important</span>
+                        </label>
+                    </div>
+
+                    <div class="custom-tags" id="customTagsArea">
+                        <label><strong>Custom Tags:</strong></label>
+                        <div id="customTagsList"></div>
+                        <div class="add-tag-form">
+                            <input type="text" id="newTagInput" placeholder="e.g., Work, Learning" maxlength="20">
+                            <button type="button" class="btn btn-secondary" id="addTagBtn">Add Tag</button>
+                        </div>
+                        <span class="hint">Add your own custom tags (max 20 characters each)</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Actions -->
+
         <div class="actions">
             <button class="btn btn-secondary" id="resetBtn">Reset</button>
             <button class="btn btn-primary" id="saveBtn">Save Settings</button>
@@ -82,22 +132,45 @@
 
         <!-- Shortcuts Info -->
         <section class="info">
-            <h3>Keyboard Shortcuts</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <h3 style="margin: 0;">Keyboard Shortcuts</h3>
+                <div class="os-toggle">
+                    <button class="os-btn active" data-os="mac">Mac</button>
+                    <button class="os-btn" data-os="windows">Windows</button>
+                </div>
+            </div>
             <div class="shortcuts">
-                <div class="shortcut">
-                    <kbd>Ctrl+S</kbd> <span class="os">(Mac)</span>
+                <div class="shortcut mac-shortcut">
+                    <kbd>Ctrl+S</kbd>
                     <span>Quick save without popup</span>
                 </div>
-                <div class="shortcut">
-                    <kbd>Alt+S</kbd> <span class="os">(Windows)</span>
+                <div class="shortcut windows-shortcut" style="display: none;">
+                    <kbd>Alt+S</kbd>
                     <span>Quick save without popup</span>
+                </div>
+                <div class="shortcut mac-shortcut">
+                    <kbd>Ctrl+Shift+S</kbd>
+                    <span>Save with tags and notes</span>
+                </div>
+                <div class="shortcut windows-shortcut" style="display: none;">
+                    <kbd>Alt+Shift+S</kbd>
+                    <span>Save with tags and notes</span>
+                </div>
+                <div class="shortcut mac-shortcut">
+                    <kbd>Ctrl+O</kbd>
+                    <span>Open your Google Sheet</span>
+                </div>
+                <div class="shortcut windows-shortcut" style="display: none;">
+                    <kbd>Alt+O</kbd>
+                    <span>Open your Google Sheet</span>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>Version 1.0.0</p>
+            <p>Version 1.2 • <a href="https://www.findmyicp.com/sheets" target="_blank">Save to Sheets by FindMyICP</a>
+            </p>
         </footer>
     </div>
 

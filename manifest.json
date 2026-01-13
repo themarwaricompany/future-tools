@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Future Tools - Save to Google Sheets",
-    "version": "1.0.0",
-    "description": "Never forget a tool again. Save any webpage to your Google Sheet with one click.",
+    "name": "Save to Sheets in 1-Click by FindMyICP",
+    "version": "1.2",
+    "description": "Save pages to YOUR Google Sheet with one click. No login, no tracking, completely private. Your data stays yours.",
     "permissions": [
         "activeTab",
         "storage"
@@ -24,14 +24,28 @@
                 "default": "Alt+S",
                 "mac": "MacCtrl+S"
             },
-            "description": "Save current page"
+            "description": "Quick save current page"
+        },
+        "save-with-tags": {
+            "suggested_key": {
+                "default": "Alt+Shift+S",
+                "mac": "MacCtrl+Shift+S"
+            },
+            "description": "Save with tags and notes"
+        },
+        "open-sheet": {
+            "suggested_key": {
+                "default": "Alt+O",
+                "mac": "MacCtrl+O"
+            },
+            "description": "Open your Google Sheet"
         },
         "_execute_action": {
             "suggested_key": {
                 "default": "Alt+U",
                 "mac": "MacCtrl+U"
             },
-            "description": "Open popup"
+            "description": "Open Save Later popup"
         }
     },
     "options_page": "options.html",
